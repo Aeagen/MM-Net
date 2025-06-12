@@ -19,7 +19,7 @@ Below are example segmentation results, highlighting tumor core, enhancing tumor
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/yourusername/MM-Net.git
+   git clone https://github.com/Aeagen/MM-Net.git
    cd MM-Net
    ```
 2. Set up a Python environment (recommended: conda):
