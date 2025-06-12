@@ -4,13 +4,13 @@ This repository contains the implementation of **MM-Net: Accurate Tumor Segmenta
 
 ## Model Architecture
 
-The following diagram illustrates the MM-Net architecture, showing the integration of convolutional blocks and lightweight transformer modules:
+The following diagram illustrates the MM-Net architecture:
 
 ![MM-Net Architecture](docs/mmnet_architecture.png)
 
 ## Experimental Results
 
-Below are example segmentation results on the BraTS validation set, highlighting tumor core, enhancing tumor, and whole tumor predictions:
+Below are example segmentation results, highlighting tumor core, enhancing tumor, and whole tumor predictions:
 
 ![Segmentation Results](docs/results.png)
 
