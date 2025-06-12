@@ -1,6 +1,6 @@
 # MM-Net: Accurate Tumor Segmentation from Medical Images with Lightweight Hybrid Transformers
 
-This repository contains the implementation of **MM-Net: Accurate Tumor Segmentation from Medical Images with Lightweight Hybrid Transformers**, a novel lightweight hybrid transformer-based network for accurate tumor segmentation across various medical imaging modalities.
+This repository contains an implementation of **MM-Net: Accurate Tumor Segmentation from Medical Images with Lightweight Hybrid Transformers**
 
 ## Model Architecture
 
@@ -10,7 +10,7 @@ The following diagram illustrates the MM-Net architecture:
 
 ## Experimental Results
 
-Below are example segmentation results, highlighting tumor core, enhancing tumor, and whole tumor predictions:
+Below are example segmentation results:
 
 ![Segmentation Results](docs/results.png)
 
