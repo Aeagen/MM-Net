@@ -1,26 +1,6 @@
 # MM-Net: Accurate Tumor Segmentation from Medical Images with Lightweight Hybrid Transformers
 
-This repository contains the implementation of **MM-Net**, a novel lightweight hybrid transformer-based network for accurate tumor segmentation across various medical imaging modalities.
-
-## Overview
-
-* **Model:** MM-Net (EquiUnet by default)
-* **Applications:** Brain tumor segmentation (e.g., BraTS datasets)
-* **Features:**
-
-  * Hybrid CNN-Transformer architecture for efficient global and local feature learning
-  * Lightweight design with reduced parameters and FLOPs
-  * Supports multi-model ensemble via TTA (Test-Time Augmentation)
-
-## Pretrained Weights
-
-We provide pretrained model weights to help you get started quickly:
-
-> **Baidu Netdisk 下载链接**: [https://pan.baidu.com/s/1I0k1fVqV7rOPBzcArRzj8A](https://pan.baidu.com/s/1I0k1fVqV7rOPBzcArRzj8A)
-> 提取码: `1a5s`
-
-{: .notice--info}
-**Note:** Download the archive and extract the `.pth.tar` files into a folder named `pretrained_weights` at the root of this repository.
+This repository contains the implementation of **MM-Net: Accurate Tumor Segmentation from Medical Images with Lightweight Hybrid Transformers**, a novel lightweight hybrid transformer-based network for accurate tumor segmentation across various medical imaging modalities.
 
 ## Installation
 
@@ -33,7 +13,7 @@ We provide pretrained model weights to help you get started quickly:
 2. Set up a Python environment (recommended: conda):
 
    ```bash
-   conda create -n mmnet python=3.8
+   conda create -n mmnet python
    conda activate mmnet
    pip install -r requirements.txt
    ```
@@ -82,6 +62,14 @@ runs/
     └── patients_indiv_perf.csv                 # Per-patient performance log
 ```
 
+## Model Weights (BraTS Training Results)
+
+The model weights reported in our paper, trained on the BraTS2020 dataset, are available for download:
+
+> **Baidu Netdisk 下载链接**: [https://pan.baidu.com/s/1I0k1fVqV7rOPBzcArRz8A](https://pan.baidu.com/s/1I0k1fVqV7rOPBzcArRz8A)
+> 提取码: `1a5s`
+
+
 ## Inference
 
 Use the `inference_Axial.py` script to perform validation or testing inference:
@@ -123,3 +111,8 @@ Below are example segmentation results on the BraTS validation set, highlighting
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
+## Citation
+
+If you use MM-Net in your research, please cite:
+
+> **Your Name**, **Co-author Name**, *MM-Net: Accurate Tumor Segmentation from Medical Images with Lightweight Hybrid Transformers*, *Proceedings of XYZ Conference*, 202X.
