@@ -2,6 +2,18 @@
 
 This repository contains the implementation of **MM-Net: Accurate Tumor Segmentation from Medical Images with Lightweight Hybrid Transformers**, a novel lightweight hybrid transformer-based network for accurate tumor segmentation across various medical imaging modalities.
 
+## Model Architecture
+
+The following diagram illustrates the MM-Net architecture, showing the integration of convolutional blocks and lightweight transformer modules:
+
+![MM-Net Architecture](docs/mmnet_architecture.png)
+
+## Experimental Results
+
+Below are example segmentation results on the BraTS validation set, highlighting tumor core, enhancing tumor, and whole tumor predictions:
+
+![Segmentation Results](docs/results.png)
+
 ## Installation
 
 1. Clone this repository:
@@ -95,17 +107,7 @@ python -m src.inference_Axial \
 * `--tta`: Enable Test-Time Augmentation (averaging multiple predictions)
 * `--seed`: Random seed for reproducibility
 
-## Model Architecture
 
-The following diagram illustrates the MM-Net architecture, showing the integration of convolutional blocks and lightweight transformer modules:
-
-![MM-Net Architecture](docs/mmnet_architecture.png)
-
-## Experimental Results
-
-Below are example segmentation results on the BraTS validation set, highlighting tumor core, enhancing tumor, and whole tumor predictions:
-
-![Segmentation Results](docs/results_example.png)
 
 ## License
 
