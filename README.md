@@ -113,8 +113,4 @@ python -m src.inference_Axial \
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## Citation
 
-If you use MM-Net in your research, please cite:
-
-> **Your Name**, **Co-author Name**, *MM-Net: Accurate Tumor Segmentation from Medical Images with Lightweight Hybrid Transformers*, *Proceedings of XYZ Conference*, 202X.
