@@ -74,9 +74,9 @@ runs/
     └── patients_indiv_perf.csv                 # Per-patient performance log
 ```
 
-## Model Weights (BraTS Training Results)
+## Model Weights 
 
-The model weights reported in our paper, trained on the BraTS2020 dataset, are available for download:
+The model weights reported in our paper, trained on the BraTS dataset, are available for download:
 
 > **Baidu Netdisk 下载链接**: [https://pan.baidu.com/s/1I0k1fVqV7rOPBzcArRz8A](https://pan.baidu.com/s/1I0k1fVqV7rOPBzcArRz8A)
 > 提取码: `1a5s`
