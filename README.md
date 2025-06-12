@@ -3,7 +3,7 @@
 This repository contains the implementation of **MM-Net: Accurate Tumor Segmentation from Medical Images with Lightweight Hybrid Transformers**, a novel lightweight hybrid transformer-based network designed for accurate tumor segmentation from various medical imaging modalities.
 
 
- Training
+Training
 
 First change your data source folder by modifying values in `src/config.py`
 
@@ -18,12 +18,12 @@ If you prefer not to hardcode this value, you can set them as variable environme
 Then, start training:
 
 ```
-python -m src.train --devices 0 --width 48 --arch EquiUnet
+python -m src.train_trans --devices 0 --width 48 --arch EquiUnet
 ```
 
 For more details on the available option:
 ```
-python -m src.train -h
+python -m src.train_trans -h
 ```
 
 Note that this code use an nn.Module to do data augmentation: any batch size above 1 could lead to errors.
@@ -52,7 +52,7 @@ The yaml file is required to perform inference on the validation and train set
 The script to perform inference is... `inference.py` !!
 
 ```
-python -m src.inference -h 
+python -m src.inference_Axial -h 
 usage: inference.py [-h] [--config PATH [PATH ...]] --devices DEVICES
                     [--on {val,train,test}] [--tta] [--seed SEED]
 
