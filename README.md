@@ -1,73 +1,125 @@
 # MM-Net: Accurate Tumor Segmentation from Medical Images with Lightweight Hybrid Transformers
 
-This repository contains the implementation of **MM-Net: Accurate Tumor Segmentation from Medical Images with Lightweight Hybrid Transformers**, a novel lightweight hybrid transformer-based network designed for accurate tumor segmentation from various medical imaging modalities.
+This repository contains the implementation of **MM-Net**, a novel lightweight hybrid transformer-based network for accurate tumor segmentation across various medical imaging modalities.
 
+## Overview
 
-Training
+* **Model:** MM-Net (EquiUnet by default)
+* **Applications:** Brain tumor segmentation (e.g., BraTS datasets)
+* **Features:**
 
-First change your data source folder by modifying values in `src/config.py`
+  * Hybrid CNN-Transformer architecture for efficient global and local feature learning
+  * Lightweight design with reduced parameters and FLOPs
+  * Supports multi-model ensemble via TTA (Test-Time Augmentation)
+
+## Pretrained Weights
+
+We provide pretrained model weights to help you get started quickly:
+
+> **Baidu Netdisk 下载链接**: [https://pan.baidu.com/s/1I0k1fVqV7rOPBzcArRzj8A](https://pan.baidu.com/s/1I0k1fVqV7rOPBzcArRzj8A)
+> 提取码: `1a5s`
+
+{: .notice--info}
+**Note:** Download the archive and extract the `.pth.tar` files into a folder named `pretrained_weights` at the root of this repository.
+
+## Installation
+
+1. Clone this repository:
+
+   ```bash
+   git clone https://github.com/yourusername/MM-Net.git
+   cd MM-Net
+   ```
+2. Set up a Python environment (recommended: conda):
+
+   ```bash
+   conda create -n mmnet python=3.8
+   conda activate mmnet
+   pip install -r requirements.txt
+   ```
+
+## Dataset Setup
+
+By default, the data paths are specified in `src/config.py`. You can either edit this file:
 
 ```python
-BRATS_TRAIN_FOLDERS = "your-Path_to/brats2020/MICCAI_BraTS_2020_Data_Training"
-BRATS_VAL_FOLDER = "your-Path_to/brats2020/MICCAI_BraTS_2020_Data_Valdation"
-BRATS_TEST_FOLDER = "your-Path_to/brats2020/MICCAI_BraTS_2020_Data_Testing"
+BRATS_TRAIN_FOLDERS = "/path/to/brats2020/MICCAI_BraTS_2020_Data_Training"
+BRATS_VAL_FOLDER    = "/path/to/brats2020/MICCAI_BraTS_2020_Data_Validation"
+BRATS_TEST_FOLDER   = "/path/to/brats2020/MICCAI_BraTS_2020_Data_Testing"
 ```
 
-If you prefer not to hardcode this value, you can set them as variable environments.
+or set them as environment variables:
 
-Then, start training:
-
+```bash
+export BRATS_TRAIN_FOLDERS=/path/to/brats2020/MICCAI_BraTS_2020_Data_Training
+export BRATS_VAL_FOLDER=/path/to/brats2020/MICCAI_BraTS_2020_Data_Validation
+export BRATS_TEST_FOLDER=/path/to/brats2020/MICCAI_BraTS_2020_Data_Testing
 ```
+
+## Training
+
+To start training, run:
+
+```bash
 python -m src.train_trans --devices 0 --width 48 --arch EquiUnet
 ```
 
-For more details on the available option:
-```
+For more options:
+
+```bash
 python -m src.train_trans -h
 ```
 
-After training, you will have a `runs` folder created containing a directory for each run you have done.
-
-For each run, a yaml file with the option used for the runs, and 
-a `segs` folder containing the generated .nii.gz segmentations for the validation fold used.
+After training, a `runs/` directory will be created with subfolders for each run:
 
 ```
-- src
-    - runs
-        - 20201127_34335135__fold_etc
-            202020201127_34335135__fold_etc.ymal
-            - segs
-            model.txt # the printed model
-            model_best.pth.tar # model weights
-            patients_indiv_perf.csv # a log of training patient segmentation performance
-            events.out.. # Tensorboard log
+runs/
+└── 20201127_34335135__fold_etc/
+    ├── 20201127_34335135__fold_etc.yaml         # Configuration used
+    ├── segs/                                   # Generated .nii.gz segmentation files
+    ├── model.txt                               # Model architecture summary
+    ├── model_best.pth.tar                      # Best checkpoint weights
+    └── patients_indiv_perf.csv                 # Per-patient performance log
 ```
 
-The yaml file is required to perform inference on the validation and train set
+## Inference
 
-# Inference
+Use the `inference_Axial.py` script to perform validation or testing inference:
 
-The script to perform inference is... `inference_Axial.py` !!
-
-```
-python -m src.inference_Axial -h 
-usage: inference.py [-h] [--config PATH [PATH ...]] --devices DEVICES
-                    [--on {val,train,test}] [--tta] [--seed SEED]
-
-Brats validation and testing dataset inference
-
-optional arguments:
-  -h, --help            show this help message and exit
-  --config PATH [PATH ...]
-                        path(s) to the trained models config yaml you want to
-                        use
-  --devices DEVICES     Set the CUDA_VISIBLE_DEVICES env var from this string
-  --on {val,train,test}
-  --tta
-  --seed SEED
-
+```bash
+python -m src.inference_Axial -h
 ```
 
-This script can take multiple models (specify multiple yaml config files), even when trained 
-with different image normalization techniques (minmax or zscore);
-and will automatically merge their prediction (by averaging). 
+**Usage:**
+
+```bash
+python -m src.inference_Axial \
+  --config path/to/config1.yaml path/to/config2.yaml \
+  --devices 0 \
+  --on val \
+  [--tta] \
+  [--seed 42]
+```
+
+* `--config`: One or more trained model YAML configs
+* `--devices`: CUDA device IDs (e.g., `0,1`)
+* `--on`: Dataset split: `val`, `train`, or `test`
+* `--tta`: Enable Test-Time Augmentation (averaging multiple predictions)
+* `--seed`: Random seed for reproducibility
+
+## Model Architecture
+
+The following diagram illustrates the MM-Net architecture, showing the integration of convolutional blocks and lightweight transformer modules:
+
+![MM-Net Architecture](docs/mmnet_architecture.png)
+
+## Experimental Results
+
+Below are example segmentation results on the BraTS validation set, highlighting tumor core, enhancing tumor, and whole tumor predictions:
+
+![Segmentation Results](docs/results_example.png)
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
