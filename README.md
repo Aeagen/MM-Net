@@ -49,7 +49,7 @@ The yaml file is required to perform inference on the validation and train set
 
 # Inference
 
-The script to perform inference is... `inference.py` !!
+The script to perform inference is... `inference_Axial.py` !!
 
 ```
 python -m src.inference_Axial -h 
