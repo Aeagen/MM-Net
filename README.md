@@ -26,8 +26,6 @@ For more details on the available option:
 python -m src.train_trans -h
 ```
 
-Note that this code use an nn.Module to do data augmentation: any batch size above 1 could lead to errors.
-
 After training, you will have a `runs` folder created containing a directory for each run you have done.
 
 For each run, a yaml file with the option used for the runs, and 
