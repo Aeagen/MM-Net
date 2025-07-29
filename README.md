@@ -5,7 +5,7 @@ This repository contains an implementation of **MM-Net: Accurate Tumor Segmentat
 ## Installation
 
 <details>
-  <summary>Installation</summary>
+  Installation
   We train and test our models under ```python=3.7.3,pytorch=1.6.0,cuda=9.2```. 
 
    1. Clone this repo
