@@ -132,6 +132,36 @@ export BRATS_TEST_FOLDER=/path/to/brats2020/MICCAI_BraTS_2020_Data_Testing
 
 </details>
 
+<details>
+  <summary>2. Train a model from scratch </summary>
+
+To start training, run:
+
+```bash
+python -m src.train_trans --devices 0 --width 48 --arch EquiUnet
+```
+
+For more options:
+
+```bash
+python -m src.train_trans -h
+```
+
+After training, a `runs/` directory will be created with subfolders for each run:
+
+```
+runs/
+└── 20201127_34335135__fold_etc/
+    ├── 20201127_34335135__fold_etc.yaml         # Configuration used
+    ├── segs/                                   # Generated .nii.gz segmentation files
+    ├── model.txt                               # Model architecture summary
+    ├── model_best.pth.tar                      # Best checkpoint weights
+    └── patients_indiv_perf.csv                 # Per-patient performance log
+```
+
+
+</details>
+
 
 
 ## Training
