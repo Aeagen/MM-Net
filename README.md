@@ -80,7 +80,7 @@ export BRATS_TEST_FOLDER=/path/to/brats2020/MICCAI_BraTS_2020_Data_Testing
 
 ## Run
 
-#1. Eval our pretrianed models
+##1. Eval our pretrianed models
 
   <!-- ### Eval our pretrianed model -->
   Download our MM-Net model checkpoint "checkpoint.pth" from 
@@ -110,7 +110,7 @@ export BRATS_TEST_FOLDER=/path/to/brats2020/MICCAI_BraTS_2020_Data_Testing
   * `--seed`: Random seed for reproducibility
 
 
-#2. Train a model from scratch
+##2. Train a model from scratch
 
 To start training, run:
 
