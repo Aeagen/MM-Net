@@ -150,6 +150,17 @@ runs/
 
 </details>
 
+## Model Architecture
+
+The following diagram illustrates the MM-Net architecture:
+
+![MM-Net Architecture](docs/mmnet_architecture.png)
+
+## Experimental Results
+
+Below are example segmentation results:
+
+![Segmentation Results](docs/results.png)
 
 
 
