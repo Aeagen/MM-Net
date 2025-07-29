@@ -80,9 +80,7 @@ export BRATS_TEST_FOLDER=/path/to/brats2020/MICCAI_BraTS_2020_Data_Testing
 
 ## Run
 
-###1. Eval our pretrianed models
- <!-- ### Eval our pretrained model -->
-  <!-- ### Eval our pretrianed model -->
+### 1. Eval our pretrianed models
   Download our MM-Net model checkpoint "checkpoint.pth" from 
   
   > **Baidu Netdisk 下载链接**: [https://pan.baidu.com/s/1I0k1fVqV7rOPBzcArRz8A](https://pan.baidu.com/s/1I0k1fVqV7rOPBzcArRz8A)
@@ -110,8 +108,7 @@ export BRATS_TEST_FOLDER=/path/to/brats2020/MICCAI_BraTS_2020_Data_Testing
   * `--seed`: Random seed for reproducibility
 
 
-###2. Train a model from scratch
- <!-- ### Train a model from scratch -->
+### 2. Train a model from scratch
 To start training, run:
 
 ```bash
