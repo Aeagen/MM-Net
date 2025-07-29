@@ -98,6 +98,42 @@ export BRATS_TEST_FOLDER=/path/to/brats2020/MICCAI_BraTS_2020_Data_Testing
 
 </details>
 
+## Run
+
+<details>
+  <summary>1. Eval our pretrianed models</summary>
+
+  <!-- ### Eval our pretrianed model -->
+  Download our MM-Net model checkpoint "checkpoint.pth" from 
+  
+  > **Baidu Netdisk 下载链接**: [https://pan.baidu.com/s/1I0k1fVqV7rOPBzcArRz8A](https://pan.baidu.com/s/1I0k1fVqV7rOPBzcArRz8A)
+  > 提取码: `1a5s`
+  
+  ```bash
+  python -m src.inference_Axial -h
+  ```
+  
+  **Usage:**
+  
+  ```bash
+  python -m src.inference_Axial \
+    --config path/to/config1.yaml path/to/config2.yaml \
+    --devices 0 \
+    --on val \
+    [--tta] \
+    [--seed 42]
+  ```
+  
+  * `--config`: One or more trained model YAML configs
+  * `--devices`: CUDA device IDs (e.g., `0,1`)
+  * `--on`: Dataset split: `val`, `train`, or `test`
+  * `--tta`: Enable Test-Time Augmentation (averaging multiple predictions)
+  * `--seed`: Random seed for reproducibility
+
+</details>
+
+
+
 ## Training
 
 To start training, run:
