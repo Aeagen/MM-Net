@@ -75,8 +75,10 @@ BraTS2018/
 
 </details>
 
+## config Setup
 
-## Dataset Setup
+<details>
+  <summary>config Setup</summary>
 
 By default, the data paths are specified in `src/config.py`. You can either edit this file:
 
@@ -93,6 +95,8 @@ export BRATS_TRAIN_FOLDERS=/path/to/brats2020/MICCAI_BraTS_2020_Data_Training
 export BRATS_VAL_FOLDER=/path/to/brats2020/MICCAI_BraTS_2020_Data_Validation
 export BRATS_TEST_FOLDER=/path/to/brats2020/MICCAI_BraTS_2020_Data_Testing
 ```
+
+</details>
 
 ## Training
 
