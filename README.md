@@ -46,6 +46,36 @@ Below are example segmentation results:
    ```
 </details>
 
+## Data
+
+<details>
+  <summary>Data</summary>
+
+Please download the corresponding datasets from the following links and organize the files as follows:
+
+- [BraTS 2018 Dataset](https://www.med.upenn.edu/sbia/brats2018/registration.html)
+- [BraTS 2019 Dataset](https://www.med.upenn.edu/cbica/brats2019/registration.html)
+- [BraTS 2020 Dataset](https://www.med.upenn.edu/cbica/brats2020/registration.html)
+
+For all three datasets, organize the files like this:
+```
+BraTS2018/
+  ├── train/
+  │   ├── Brats18_2013_2_1
+  │   │   ├── Brats18_2013_2_1_flair.nii.gz
+  │   │   ├── Brats18_2013_2_1_seg.nii.gz
+  │   │   ├── Brats18_2013_2_1_t1.nii.gz
+  │   │   ├── Brats18_2013_2_1_t1ce.nii.gz
+  │   │   ├── Brats18_2013_2_1_t2.nii.gz
+  │   ├── Brats18_2013_3_1
+  │   ├── Brats18_2013_4_1
+  │   ├── ...
+  ├── valid/
+```
+
+</details>
+
+
 ## Dataset Setup
 
 By default, the data paths are specified in `src/config.py`. You can either edit this file:
