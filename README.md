@@ -33,7 +33,7 @@ This repository contains an implementation of **MM-Net: Accurate Tumor Segmentat
 
   5. Install Ranger
   ```sh
-  cd Ranger-Deep-Learning-Optimizer
+  cd Ranger
   pip install -e .
   ``` 
 ## Data
