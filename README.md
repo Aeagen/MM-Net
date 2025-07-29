@@ -4,8 +4,6 @@ This repository contains an implementation of **MM-Net: Accurate Tumor Segmentat
 
 ## Installation
 
-<details>
-  Installation
   We train and test our models under ```python=3.7.3,pytorch=1.6.0,cuda=9.2```. 
 
    1. Clone this repo
@@ -32,12 +30,10 @@ This repository contains an implementation of **MM-Net: Accurate Tumor Segmentat
    ```sh
    pip install -r requirements.txt
    ```
-</details>
 
 ## Data
 
-<details>
-  <summary>Data</summary>
+
 
 Please download the corresponding datasets from the following links and organize the files as follows:
 
@@ -61,12 +57,9 @@ BraTS2018/
   ├── valid/
 ```
 
-</details>
+
 
 ## config Setup
-
-<details>
-  <summary>config Setup</summary>
 
 By default, the data paths are specified in `src/config.py`. You can either edit this file:
 
@@ -84,12 +77,10 @@ export BRATS_VAL_FOLDER=/path/to/brats2020/MICCAI_BraTS_2020_Data_Validation
 export BRATS_TEST_FOLDER=/path/to/brats2020/MICCAI_BraTS_2020_Data_Testing
 ```
 
-</details>
 
 ## Run
 
-<details>
-  <summary>1. Eval our pretrianed models</summary>
+#1. Eval our pretrianed models
 
   <!-- ### Eval our pretrianed model -->
   Download our MM-Net model checkpoint "checkpoint.pth" from 
@@ -118,10 +109,8 @@ export BRATS_TEST_FOLDER=/path/to/brats2020/MICCAI_BraTS_2020_Data_Testing
   * `--tta`: Enable Test-Time Augmentation (averaging multiple predictions)
   * `--seed`: Random seed for reproducibility
 
-</details>
 
-<details>
-  <summary>2. Train a model from scratch </summary>
+#2. Train a model from scratch
 
 To start training, run:
 
@@ -148,7 +137,6 @@ runs/
 ```
 
 
-</details>
 
 ## Model Architecture
 
