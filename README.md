@@ -16,19 +16,35 @@ Below are example segmentation results:
 
 ## Installation
 
-1. Clone this repository:
+<details>
+  <summary>Installation</summary>
+  We train and test our models under ```python=3.7.3,pytorch=1.6.0,cuda=9.2```. 
 
-   ```bash
-   git clone https://github.com/Aeagen/MM-Net.git
+   1. Clone this repo
+   ```sh
+   git https://github.com/Aeagen/MM-Net.git
    cd MM-Net
    ```
-2. Set up a Python environment (recommended: conda):
-
+   2. Set up a Python environment (recommended: conda):
+   
    ```bash
    conda create -n mmnet python
    conda activate mmnet
+   ```
+
+   3. Install Pytorch and torchvision
+
+   Follow the instruction on https://pytorch.org/get-started/locally/.
+   ```sh
+   # an example:
+   conda install -c pytorch pytorch torchvision
+   ```
+
+   4. Install other needed packages
+   ```sh
    pip install -r requirements.txt
    ```
+</details>
 
 ## Dataset Setup
 
